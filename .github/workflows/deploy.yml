@@ -20,10 +20,10 @@ jobs:
 
     steps:
       - name: Checkout source code
-        users: actions/checkout@master
+        uses: actions/checkout@master
 
       - name: Set up Node.js
-        users: actions/setup-node@master
+        uses: actions/setup-node@master
         with:
           node-version: 14.x
 
