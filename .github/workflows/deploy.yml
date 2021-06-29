@@ -23,18 +23,18 @@ jobs:
       users: actions/checkout@master
       
       - name: Set up Node.js
-      users: actions/setup-node@master
+        users: actions/setup-node@master
       with:
         node-version: 14.x
 
       - name: Install dependencies
-      run: yarn install
+        run: yarn install
 
       - name: Deploy to gh-pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{secrets.GITHUB_TOKEN}}
-        publish_dir: ./dist
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          publish_dir: ./dist
 
   # This workflow contains a single job called "build"
   build:
