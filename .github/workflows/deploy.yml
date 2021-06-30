@@ -33,11 +33,16 @@ jobs:
       - name: Test unit
         run: yarn test:unit
 
+      - name: Build page
+        run: yarn build
+        env:
+          NODE_ENV: production
+
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
-          publish_dir: ./build
+          publish_dir: ./dist
 
   # This workflow contains a single job called "build"
   build:
